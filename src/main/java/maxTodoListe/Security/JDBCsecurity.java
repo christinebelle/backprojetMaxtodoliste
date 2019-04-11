@@ -1,4 +1,4 @@
-package maxTodoListe;
+package maxTodoListe.Security;
 
 import javax.sql.DataSource;
 
@@ -53,7 +53,16 @@ public class JDBCsecurity extends WebSecurityConfigurerAdapter{
                 "/**/*.js"
         ).permitAll()
 		.antMatchers("/").permitAll()
-		.antMatchers("/api/liste").permitAll()
+		.antMatchers("/tache").permitAll()
+		.antMatchers("/AFaire").permitAll()
+		.antMatchers("/EnCour").permitAll()
+		.antMatchers("/Terminer").permitAll()
+		.antMatchers("/ajouterTache").permitAll()
+		.antMatchers("/modifierTache").permitAll()
+		.antMatchers("/liste").permitAll()
+		.antMatchers("/ajouter").permitAll()
+		.antMatchers("/modifier").permitAll()
+		.antMatchers("/supprime/{idListe}").permitAll()
 		.antMatchers("/kanban").permitAll()
 		.antMatchers("/max").hasAnyAuthority("USER")
 		.anyRequest().authenticated()
